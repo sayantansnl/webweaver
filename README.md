@@ -4,6 +4,12 @@ A fast, concurrent web scraper written in TypeScript. It traverses a target webs
 (internal links), and generates a 2D network graph visualization as a PNG image using `pureimage`.
 
 ---
+## What it does
+
+- Crawls a site starting from any URL, staying within the target domain (won't wander off to external sites).
+- Records every internal link relationship between pages.
+- Outputs structured data files (JSON) of all page-to-page connections and every page data.
+- Generates a visual network map (PNG) showing how pages interlink.
 
 ## Demo
 
