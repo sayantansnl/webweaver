@@ -1,4 +1,4 @@
-import path from "node:path";
+import { resolve } from "node:path";
 import { Edge, ExtractedPageData } from "./crawl.js";
 import { writeFileSync } from "node:fs";
 
@@ -10,7 +10,7 @@ export function writeJSONReportForPageData(
     a.url.localeCompare(b.url),
   );
   const data = JSON.stringify(sorted, null, 2);
-  const pathX = path.resolve(process.cwd(), filename);
+  const pathX = resolve(process.cwd(), filename);
 
   writeFileSync(pathX, data);
 }
@@ -20,7 +20,7 @@ export function writeEdgesReportFromURLToURL(
   filename = "edges.json",
 ): void {
   const data = JSON.stringify(edges, null, 2);
-  const pathX = path.resolve(process.cwd(), filename);
+  const pathX = resolve(process.cwd(), filename);
 
   writeFileSync(pathX, data);
 }
